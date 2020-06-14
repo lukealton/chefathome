@@ -16,3 +16,4 @@ windows_package '7-Zip 19.00 (x64 edition)' do
 end
 
 include_recipe 'first_cookbook::powershell_core'
+include_recipe 'first_cookbook::powershell_repos'
