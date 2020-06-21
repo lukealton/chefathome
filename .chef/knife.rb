@@ -8,4 +8,4 @@ client_key               "#{current_dir}/lalton80.pem"
 chef_server_url          "https://api.chef.io/organizations/lukealton"
 cookbook_path            ["#{current_dir}/../cookbooks"]
 
-knife[:editor] = ''"C:\Users\Luke\AppData\Local\Programs\Microsoft VS Code\Code.exe"'
+knife[:editor] = '"C:\Users\Luke\AppData\Local\Programs\Microsoft VS Code\Code.exe"'
