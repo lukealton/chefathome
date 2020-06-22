@@ -9,5 +9,7 @@ powershell_script 'Register HW MyGet PS Repo' do
   $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
   Register-PSRepository -Name MyGetPowerShell –SourceLocation https://healthwise.myget.org/F/powershellmodules/api/v2 -InstallationPolicy Trusted -Credential $credential
   EOH
-  not_if '(Get-PSRepository).SourceLocation -contains 'https://healthwise.myget.org/F/powershellmodules/api/v2''
+  not_if <<-EOH
+  (Get-PSRepository).SourceLocation -contains 'https://healthwise.myget.org/F/powershellmodules/api/v2'
+  EOH
 end
