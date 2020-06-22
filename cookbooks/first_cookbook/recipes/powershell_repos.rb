@@ -4,8 +4,8 @@ username = dbag["username"]
 
 powershell_script 'Register HW MyGet PS Repo' do
   code <<-EOH
-  $User = #{username}
-  $PWord = ConvertTo-SecureString -String #{password} -AsPlainText -Force
+  $User = '#{username}'
+  $PWord = ConvertTo-SecureString -String '#{password}' -AsPlainText -Force
   $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
   Register-PSRepository -Name 'MyGetPowerShell' -SourceLocation 'https://healthwise.myget.org/F/powershellmodules/api/v2' -InstallationPolicy Trusted -Credential $credential
   EOH
